@@ -22,7 +22,6 @@ public class NaverLoginBean {
 	private static final String CLIENT_SAECRET="PDRefcKfIm";
 	private static final String REDIRECT_URI="http://localhost:8000/moyeo/naver/callback";
 	private static final String SESSION_STATE="naverState";
-	//사용자 프로필을 조회하기 위한 API의 URL 주소 저장
 	private static final String PROFILE_API_URI="https://openapi.naver.com/v1/nid/me";
 	
 	//네이버 로그인 기능을 제공하는 API를 호출하여 결과(code와 state)를 반환하는 메소드 

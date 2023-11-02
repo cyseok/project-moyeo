@@ -62,7 +62,6 @@ public class NaverLoginController {
 		//접근 토큰을 이용하여 로그인 사용자의 프로필을 반환하는 메소드를 호출하여 사용자 프로필(JSON)을 저장
 		String apiResult=naverLoginBean.getUserProfile(accessToken);
 		//{"resultcode":"00","message":"success","response":{"id":"XAfMAwX_vELrzkOKnQPW2B5VSOs4kPM5P0Zl0ZuFY00","nickname":"ocj****","email":"ocj1778@hanmail.com","name":"\uc624\ucc3d\uc911"}}
-		//System.out.println(apiResult);
 		
 		//JSONParser 객체 : JSON 형식의 문자열을 JSON 객체로 변환하는 기능을 제공하는 객체
 		JSONParser parser=new JSONParser();
@@ -102,10 +101,8 @@ public class NaverLoginController {
 		//네이버 로그인 사용자 정보를 사용하여 UserDetails 객체(로그인 사용자)를 생성하여 저장
 		CustomUserDetails customUserDetails=new CustomUserDetails(userinfo);
 		
-		//UsernamePasswordAuthenticationToken 객체를 생성하여 Spring Security가 사용 가능한
-		//인증 사용자로 등록 처리
-		//UsernamePasswordAuthenticationToken 객체 : 인증 성공한 사용자를 Spring Security가
-		//사용 가능한 인증 사용자로 등록 처리하는 객체
+		//UsernamePasswordAuthenticationToken 객체를 생성하여 Spring Security가 사용 가능한 인증 사용자로 등록 처리
+		//UsernamePasswordAuthenticationToken 객체 : 인증 성공한 사용자를 Spring Security가 사용 가능한 인증 사용자로 등록 처리하는 객체
 		Authentication authentication=new UsernamePasswordAuthenticationToken
 				(customUserDetails, null, customUserDetails.getAuthorities());
 		
