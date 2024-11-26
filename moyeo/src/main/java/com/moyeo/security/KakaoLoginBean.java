@@ -94,11 +94,9 @@ public class KakaoLoginBean {
         oauthService.signRequest(oauthToken, request);
         Response response = request.send();
 
-        // 응답 데이터 확인
         String responseBody = response.getBody();
-        System.out.println("Kakao API Response: " + responseBody);
 
-        return response.getBody();
+        return responseBody;
     }
 
 }

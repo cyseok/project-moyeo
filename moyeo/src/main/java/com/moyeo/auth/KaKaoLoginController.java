@@ -46,10 +46,10 @@ public class KaKaoLoginController {
 	@RequestMapping("/callback")
 	public String login(@RequestParam(value = "code", required = false) String code, @RequestParam(value = "state", required = false) String state
 			, HttpSession session) throws IOException, ParseException {
+		
 		OAuth2AccessToken accessToken=kakaoLoginBean.getAccessToken(session, code, state);
 		
 		String apiResult=kakaoLoginBean.getUserProfile(accessToken);
-		System.out.println("apiResult : " +apiResult);
 		
 		//JSONParser 객체 : JSON 형식의 문자열을 JSON 객체로 변환하는 기능을 제공하는 객체
 		JSONParser parser=new JSONParser();
